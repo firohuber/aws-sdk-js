@@ -17201,10 +17201,10 @@ return /******/ (function(modules) { // webpackBootstrap
 		    if (value === null || value === undefined) return;
 		    if (typeof value === 'string') return;
 		    if (value && typeof value.byteLength === 'number') return; // typed arrays
-		    if (AWS.util.isNode()) { // special check for buffer/stream in Node.js
-		      var Stream = AWS.util.stream.Stream;
-		      if (AWS.util.Buffer.isBuffer(value) || value instanceof Stream) return;
-		    }
+				var Stream = AWS.util.stream.Stream;
+				if (AWS.util.Buffer.isBuffer(value) || value instanceof Stream) return;
+		    // if (AWS.util.isNode()) { // special check for buffer/stream in Node.js
+		    // }
 
 		    var types = ['Buffer', 'Stream', 'File', 'Blob', 'ArrayBuffer', 'DataView'];
 		    if (value) {
