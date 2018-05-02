@@ -17202,7 +17202,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		    if (typeof value === 'string') return;
 		    if (value && typeof value.byteLength === 'number') return; // typed arrays
 				var Stream = AWS.util.stream.Stream;
-				if (AWS.util.Buffer.isBuffer(value) || value instanceof Stream) return;
+				if (require('buffer').Buffer.isBuffer(fileData) || fileData instanceof require('stream').Stream) return;
 		    // if (AWS.util.isNode()) { // special check for buffer/stream in Node.js
 		    // }
 
