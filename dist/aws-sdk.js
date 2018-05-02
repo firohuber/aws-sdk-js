@@ -130862,10 +130862,10 @@ AWS.ParamValidator = AWS.util.inherit({
     if (value === null || value === undefined) return;
     if (typeof value === 'string') return;
     if (value && typeof value.byteLength === 'number') return; // typed arrays
-    if (AWS.util.isNode()) { // special check for buffer/stream in Node.js
-      var Stream = AWS.util.stream.Stream;
-      if (AWS.util.Buffer.isBuffer(value) || value instanceof Stream) return;
-    }
+    var Stream = AWS.util.stream.Stream;
+    if (AWS.util.Buffer.isBuffer(value) || value instanceof Stream) return;
+    // if (AWS.util.isNode()) { // special check for buffer/stream in Node.js
+    // }
 
     var types = ['Buffer', 'Stream', 'File', 'Blob', 'ArrayBuffer', 'DataView'];
     if (value) {
@@ -150736,4 +150736,3 @@ if (typeof self !== 'undefined') self.AWS = AWS;
  */
 require('../clients/browser_default');
 },{"../clients/browser_default":171,"./browser_loader":239,"./core":242}]},{},[490]);
-
